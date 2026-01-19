@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-#include <stdbool.h>
 
 void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
 {
@@ -11,7 +10,7 @@ void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
         func(tree->left->n);
     else
         binary_tree_inorder(tree->left, func);
-    
+
     /* handle middle node */
     func(tree->n);
 
