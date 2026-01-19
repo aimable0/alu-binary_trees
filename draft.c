@@ -1,22 +1,21 @@
 #include "binary_trees.h"
 #include <stdbool.h>
 
-void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
+int max(int a, int b)
 {
-    if (tree == NULL || func == NULL)
-        return;
+    if (a > b) return a;
+    return b;
+}
 
-    /* handle left substree */
-    if (binary_tree_is_leaf(tree->left) == 1)
-        func(tree->left->n);
-    else
-        binary_tree_inorder(tree->left, func);
-    /* handle middle node */
-    func(tree->n);
+size_t binary_tree_height(const binary_tree_t *tree)
+{
+    if (tree == NULL)
+        return 0;
 
-    /* handle right substree */
-    if (binary_tree_is_leaf(tree->right) == 1)
-        func(tree->right->n);
-    else
-        binary_tree_inorder(tree->right, func);
+    // What I think I should do:
+    // calculate height for left sub tree
+    // calculate height for right sub tree
+    // return biggest between the two
+    
+    return max(binary_tree_height(tree->left), binary_tree_height(tree->right)) + 1;
 }
