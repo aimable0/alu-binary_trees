@@ -16,7 +16,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
     /* if on the same level: */
     /* if one is leaf, others are leaves as well & vice-versa */
-    if (tree->left == NULL & tree->right == NULL)
+    if ((tree->left == NULL) && (tree->right == NULL))
     {
         if (tree->parent != NULL)
         {
