@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * binary_tree_height - calculates the binary tree height (longest path downward)
+ * binary_tree_height - calculates the binary tree height.
  * @tree: the tree whose height is to be calculated.
  *
  * Return: height of tree (size_t) or 0
