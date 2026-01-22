@@ -3,7 +3,7 @@
 /**
  * binary_tree_is_full - checks if a each node has exactly two or zero children
  * @tree: binary tree to check.
- * Return: 1 if tree is full or 0 otherwise.
+ * Return: 1 if full or 0 otherwise.
  */
 int binary_tree_is_full(const binary_tree_t *tree)
 {
