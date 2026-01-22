@@ -14,22 +14,19 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
         return (0);
     }
 
-    /* if on the same level: */
-    /* if one is leaf, others are leaves as well & vice-versa */
-    if ((tree->left == NULL) && (tree->right == NULL))
+    /* on the same level, if one is leaf, others are leaves as well & vice-versa */
+    if (tree->left != NULL && tree->right != NULL)
     {
-        if (tree->parent != NULL)
-        {
-            if (tree->parent->right->left == NULL
-                && tree->parent->right->right == NULL)
-                return (1);
-        }
-        /* Single node tree */
-        else if (tree->parent == NULL)
+        if (tree->left->left == NULL &&
+            tree->left->right == NULL &&
+            tree->right->left == NULL &&
+            tree->right->right == NULL)
         {
             return (1);
         }
-    }
+    } else if (tree->parent == NULL)
+        return 1;
+
     if (tree->left && tree->right)
     {
         return (binary_tree_is_perfect(tree->left)
