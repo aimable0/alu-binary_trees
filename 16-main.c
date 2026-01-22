@@ -33,5 +33,11 @@ int main(void)
     binary_tree_print(root);
     perfect = binary_tree_is_perfect(root);
     printf("Perfect: %d\n", perfect);
+
+    /* My test for a single node */
+    root = binary_tree_node(NULL, 12);
+    binary_tree_print(root);
+    perfect = binary_tree_is_perfect(root);
+    printf("Perfect: %d\n", perfect);
     return (0);
 }
