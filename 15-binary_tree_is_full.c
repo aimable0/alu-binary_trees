@@ -2,6 +2,7 @@
 
 /**
  * binary_tree_is_leaf - checks if a node is a leaf (has no kids)
+ * @node: node to check.
  *
  * Return: 1 if node is leaf and 0 otherwise.
  */
@@ -20,7 +21,7 @@ return (0);
 
 /**
  * binary_tree_is_full - checks if a each node has exactly two or zero children
- *
+ * @tree: binary tree to check.
  * Return: 1 if tree is full and 0 otherwise.
  */
 int binary_tree_is_full(const binary_tree_t *tree)
@@ -28,6 +29,12 @@ int binary_tree_is_full(const binary_tree_t *tree)
 if (tree == NULL)
 {
 return (0);
+}
+
+/* handle single node */
+if (binary_tree_is_leaf(tree))
+{
+return (1);
 }
 
 if (tree->left || tree->right)
@@ -56,5 +63,5 @@ return (0);
 }
 }
 
-return 1;
+return (1);
 }
